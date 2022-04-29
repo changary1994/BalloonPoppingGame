@@ -29,6 +29,7 @@ public class ButtonFunctions : MonoBehaviour
         //string s = playerNameInput.text;
      //   PersistentData.Instance.SetName(s);
         SceneManager.LoadScene("level1");
+        Time.timeScale = 1.0f;
 
     }
 
