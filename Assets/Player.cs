@@ -27,9 +27,13 @@ public class Player : MonoBehaviour
     {
         movement = Input.GetAxis("Vertical");
         movement2 = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Fire1") && Time.time > canFire)
+        if (Input.GetKey(KeyCode.LeftControl) && Time.time > canFire)
         {
             ShootPin();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = speed * 2;
         }
     }
 
