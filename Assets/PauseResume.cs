@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PauseResume : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class PauseResume : MonoBehaviour
 
         foreach (GameObject g in pauseMode)
             g.SetActive(true);
+
+        
     }
 
     public void Resume()
