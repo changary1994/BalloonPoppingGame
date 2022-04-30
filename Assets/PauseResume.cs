@@ -37,7 +37,7 @@ public class PauseResume : MonoBehaviour
         foreach (GameObject g in pauseMode)
             g.SetActive(true);
 
-        
+
     }
 
     public void Resume()
@@ -58,4 +58,9 @@ public class PauseResume : MonoBehaviour
         SceneManager.LoadScene("mainMenu");
     }
 
+    public void Retry()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1.0f;
+    }
 }

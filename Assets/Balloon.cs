@@ -10,6 +10,7 @@ public class Balloon : MonoBehaviour
     [SerializeField] bool isFacingRight = true;
     [SerializeField] AudioSource audio;
     [SerializeField] GameObject controller;
+    [SerializeField] private GameObject player;
     private Vector3 scaleChange;
     [SerializeField]
     private float maxSize = 3;
@@ -18,6 +19,10 @@ public class Balloon : MonoBehaviour
     private float growRate = 0.01f;
     [SerializeField] int level;
     private bool shrinkDifficulty = false;
+    private int maxDistance = 20;
+    private Vector2 desiredVelocity;
+    private Vector2 maxVelocity, steeringVelocity, currentVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,7 @@ public class Balloon : MonoBehaviour
         //speed = 7;
         speed = speed * level;
         controller = GameObject.Find("GameController");
+        player = GameObject.Find("Player");
         InvokeRepeating("SizeGrow", 3.0f, 0.05f);
         shrinkDifficulty = (PlayerPrefs.GetInt("ShrinkToggle") == 1 ? true : false);
         if (shrinkDifficulty != true)
@@ -62,12 +68,19 @@ public class Balloon : MonoBehaviour
         //rigid.velocity = new Vector2(movement * speed, rigid.velocity.y);
         // if (movement2 < 0 && isFacingRight || movement2 > 0 && !isFacingRight)
         //     Flip();
-        Vector2 direction = new Vector2(1, 0);
-        transform.Translate(direction * speed);
         if (transform.position.x >= 55.7)
             Flip();
         if (transform.position.x <= -13.3)
             Flip();
+        if ((SceneManager.GetActiveScene().buildIndex) == 3)
+        {
+            Flee();
+        }
+        else
+        {
+            Vector2 direction = new Vector2(1, 0);
+            transform.Translate(direction * speed);
+        }
     }
 
     public void Flip()
@@ -79,6 +92,22 @@ public class Balloon : MonoBehaviour
     void SizeGrow()
     {
         this.transform.localScale += scaleChange;
+    }
+
+    public void Flee()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) < maxDistance)
+        {
+            desiredVelocity = (transform.position - player.transform.position);
+            steeringVelocity = desiredVelocity - currentVelocity;
+            currentVelocity += steeringVelocity;
+            transform.Translate(currentVelocity * Time.deltaTime);
+        }
+        else
+        {
+            Vector2 direction = new Vector2(1, 0);
+            transform.Translate(direction * speed);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
