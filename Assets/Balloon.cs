@@ -21,7 +21,7 @@ public class Balloon : MonoBehaviour
     private bool shrinkDifficulty = false;
     private int maxDistance = 20;
     private Vector2 desiredVelocity;
-    private Vector2 maxVelocity, steeringVelocity, currentVelocity;
+    private Vector2 steeringVelocity, currentVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +72,8 @@ public class Balloon : MonoBehaviour
             Flip();
         if (transform.position.x <= -13.3)
             Flip();
+        if (transform.position.y >= 27 || transform.position.y <= -7)
+            transform.position = new Vector2(Random.Range(-13, 55), Random.Range(9, 26));
         if ((SceneManager.GetActiveScene().buildIndex) == 3)
         {
             Flee();
