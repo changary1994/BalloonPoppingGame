@@ -58,6 +58,12 @@ public class Balloon : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         }
+        if (Time.timeSinceLevelLoad > 10)
+        {
+            AudioSource.PlayClipAtPoint(audio.clip, transform.position);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     }
 
@@ -104,12 +110,15 @@ public class Balloon : MonoBehaviour
             steeringVelocity = desiredVelocity - currentVelocity;
             currentVelocity += steeringVelocity;
             transform.Translate(currentVelocity * Time.deltaTime);
+            if (speed < 0 && isFacingRight || speed > 0 && !isFacingRight)
+                Flip();
         }
         else
         {
             Vector2 direction = new Vector2(1, 0);
             transform.Translate(direction * speed);
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
