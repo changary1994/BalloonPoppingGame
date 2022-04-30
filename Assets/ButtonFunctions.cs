@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class ButtonFunctions : MonoBehaviour
 {
-    //[SerializeField] InputField playerNameInput;
+    [SerializeField] TMP_InputField playerNameInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,9 @@ public class ButtonFunctions : MonoBehaviour
 
     public void PlayGame()
     {
-        //string s = playerNameInput.text;
-        //PersistentData.Instance.SetName(s);
+        
+        string s = playerNameInput.text;
+        PersistentData.Instance.SetName(s);
         SceneManager.LoadScene("level1");
         Time.timeScale = 1.0f;
 

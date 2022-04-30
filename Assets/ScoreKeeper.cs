@@ -12,6 +12,7 @@ public class ScoreKeeper : MonoBehaviour
     const float DEFAULT_POINTS = 14;
     [SerializeField] TMP_Text scoreTxt;
     [SerializeField] TMP_Text levelTxt;
+    [SerializeField] TMP_Text nameTxt;
     [SerializeField] int level;
     float penalty = 0f;
     const int POP_THRESHOLD_PER_LEVEL = 5;
@@ -20,14 +21,14 @@ public class ScoreKeeper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //score = PersistentData.Instance.GetScore();
+        score = PersistentData.Instance.GetScore();
         level = SceneManager.GetActiveScene().buildIndex;
         //scoreThresholdForThisLevel = SCORE_THRESHOLD_PER_LEVEL;
 
 
         DisplayScore();
         DisplayLevel();
-        //DisplayName();
+        DisplayName();
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class ScoreKeeper : MonoBehaviour
         Debug.Log("score " + score);
         Debug.Log("Earned " + points + " points");
         DisplayScore();
-        //PersistentData.Instance.SetScore(score);
+        PersistentData.Instance.SetScore(score);
 
         if (pops >= POP_THRESHOLD_PER_LEVEL)
         {
@@ -67,5 +68,10 @@ public class ScoreKeeper : MonoBehaviour
     {
         int levelToDisplay = level;
         levelTxt.text = "Level " + levelToDisplay;
+    }
+
+    public void DisplayName()
+    {
+        nameTxt.text = "Player: " + PersistentData.Instance.GetName();
     }
 }

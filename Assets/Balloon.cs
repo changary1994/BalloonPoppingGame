@@ -19,9 +19,11 @@ public class Balloon : MonoBehaviour
     private float growRate = 0.01f;
     [SerializeField] int level;
     private bool shrinkDifficulty = false;
-    private int maxDistance = 20;
+    private int maxDistance = 15;
     private Vector2 desiredVelocity;
-    private Vector2 steeringVelocity, currentVelocity;
+    private Vector2 steeringVelocity;
+    Vector2 currentVelocity = new Vector2(.3f, 0);
+    Vector2 direction = new Vector2(1, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -86,7 +88,6 @@ public class Balloon : MonoBehaviour
         }
         else
         {
-            Vector2 direction = new Vector2(1, 0);
             transform.Translate(direction * speed);
         }
     }
@@ -115,7 +116,6 @@ public class Balloon : MonoBehaviour
         }
         else
         {
-            Vector2 direction = new Vector2(1, 0);
             transform.Translate(direction * speed);
         }
         
