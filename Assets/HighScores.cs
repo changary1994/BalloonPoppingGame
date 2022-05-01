@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HighScores : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class HighScores : MonoBehaviour
     [SerializeField] string playerName;
     [SerializeField] float playerScore;
 
-    [SerializeField] Text[] nameTxts;
-    [SerializeField] Text[] scoreTxts;
+    [SerializeField] TMP_Text[] nameTxts;
+    [SerializeField] TMP_Text[] scoreTxts;
 
     // Start is called before the first frame update
     void Start()

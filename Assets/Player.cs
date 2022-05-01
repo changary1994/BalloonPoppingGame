@@ -7,19 +7,29 @@ public class Player : MonoBehaviour
     [SerializeField] float movement;
     [SerializeField] float movement2;
     [SerializeField] Rigidbody2D rigid;
-    [SerializeField] int speed;
+    [SerializeField] int playerSpeed;
     [SerializeField] bool isFacingRight = true;
     [SerializeField]
     private float fireRate = .5f;
     private float canFire = 0f;
     [SerializeField] private GameObject pin;
+    [SerializeField] Animator animator;
+
+    const int IDLE = 0;
+    const int FLY = 1;
+    const int SHOOT = 2;
 
     // Start is called before the first frame update
     void Start()
     {
         if (rigid == null)
             rigid = GetComponent<Rigidbody2D>();
-        speed = 15;
+        
+        if (animator == null)
+            animator = GetComponent<Animator>(); 
+            
+        playerSpeed = 15;
+        animator.SetInteger("motion", IDLE);
     }
 
     // Update is called once per frame
@@ -27,13 +37,23 @@ public class Player : MonoBehaviour
     {
         movement = Input.GetAxis("Vertical");
         movement2 = Input.GetAxis("Horizontal");
+        
+        if (movement >= .01 || movement <= -.01 || movement2 >= .01 || movement2 <= -.01)
+            animator.SetInteger("motion", FLY);
+        else
+            animator.SetInteger("motion", IDLE);
+        
         if (Input.GetKey(KeyCode.LeftControl) && Time.time > canFire)
         {
             ShootPin();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = speed * 2;
+            playerSpeed = playerSpeed * 2;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            playerSpeed = playerSpeed / 2;
         }
     }
 
@@ -41,11 +61,11 @@ public class Player : MonoBehaviour
     //used for physics & movement
     void FixedUpdate()
     { 
-        rigid.velocity = new Vector2(movement * speed, rigid.velocity.y);
+        rigid.velocity = new Vector2(movement * playerSpeed, rigid.velocity.y);
         if (movement2 < 0 && isFacingRight || movement2 > 0 && !isFacingRight)
             Flip();
 
-        rigid.velocity = new Vector2(movement2 * speed, rigid.velocity.x);
+        rigid.velocity = new Vector2(movement2 * playerSpeed, rigid.velocity.x);
 
     }
 
@@ -56,6 +76,7 @@ public class Player : MonoBehaviour
     }
     void ShootPin()
     {
+        animator.SetInteger("motion", SHOOT);
         canFire = Time.time + fireRate;
         Instantiate(pin, transform.position, Quaternion.identity);
     }

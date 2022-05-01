@@ -47,9 +47,10 @@ public class ScoreKeeper : MonoBehaviour
         Debug.Log("Earned " + points + " points");
         DisplayScore();
         PersistentData.Instance.SetScore(score);
-
+        
         if (pops >= POP_THRESHOLD_PER_LEVEL)
         {
+           
             //move on to next level
             SceneManager.LoadScene(level + 1);
         }
