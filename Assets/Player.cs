@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
         
         if (Input.GetKey(KeyCode.LeftControl) && Time.time > canFire)
         {
+            animator.SetInteger("motion", SHOOT);
             ShootPin();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -76,7 +77,6 @@ public class Player : MonoBehaviour
     }
     void ShootPin()
     {
-        animator.SetInteger("motion", SHOOT);
         canFire = Time.time + fireRate;
         Instantiate(pin, transform.position, Quaternion.identity);
     }

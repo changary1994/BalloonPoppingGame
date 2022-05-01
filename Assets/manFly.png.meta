@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 65e50651dcc4f6049af23528f60a9004
+guid: fbd5303480e44804eb2c358045ee8e0c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,27 +100,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jetpackIdle_0
+      name: manFly_0
       rect:
         serializedVersion: 2
         x: 291
-        y: 711
+        y: 1350
         width: 409
         height: 548
       alignment: 0
@@ -130,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70329b871035c81439f19da279d57577
-      internalID: 795230874
+      spriteID: f582e65e49b0e864588f8582ebd710b4
+      internalID: 1910703928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_1
+      name: manFly_1
       rect:
         serializedVersion: 2
         x: 1172
-        y: 711
-        width: 408
+        y: 1350
+        width: 410
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -151,19 +139,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 116c83234fe3a0046afc5fb9f5332dab
-      internalID: 918337480
+      spriteID: ae755f016ea7e4d49ba834f8c3759424
+      internalID: 241383061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_2
+      name: manFly_2
       rect:
         serializedVersion: 2
         x: 2053
-        y: 711
-        width: 409
+        y: 1350
+        width: 411
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -172,17 +160,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a220247ced027c4bbb74a734839b6a7
-      internalID: 1635014274
+      spriteID: 48820c7cf135b7a4bb04a7527a1cea0d
+      internalID: -1818003421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_3
+      name: manFly_3
       rect:
         serializedVersion: 2
-        x: 2933
+        x: 2935
+        y: 1350
+        width: 413
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6ecb3a35c0db624e8d90e0ca79cb907
+      internalID: 1047379605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_4
+      rect:
+        serializedVersion: 2
+        x: 3813
+        y: 1438
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d59f2a42e56ae468fb7c4f523451e9
+      internalID: -1852763217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_5
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 1350
+        width: 415
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34428b462eb434a4080d3b476985335e
+      internalID: -1262991525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_6
+      rect:
+        serializedVersion: 2
+        x: 289
         y: 799
         width: 15
         height: 15
@@ -193,19 +244,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b27eb80bf0d9e646b63b45a2c8b4e6f
-      internalID: 2080957577
+      spriteID: 5b35add239e5fc64698f48af0f1bddac
+      internalID: 1401104588
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_4
+      name: manFly_7
       rect:
         serializedVersion: 2
-        x: 2935
+        x: 291
         y: 711
-        width: 408
+        width: 417
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -214,19 +265,82 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29d430dfa6634d44e96a237aaa884781
-      internalID: 93020332
+      spriteID: 2b3459733f8e9c4458c6aef5816aeeed
+      internalID: -1399673032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_5
+      name: manFly_8
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 711
+        width: 419
+        height: 548
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3bab98ad2e664646ad602f365f37276
+      internalID: -1174855732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_9
+      rect:
+        serializedVersion: 2
+        x: 2053
+        y: 713
+        width: 421
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8d7103d8c76c940b6dce3dd7516f2c
+      internalID: 368227254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_10
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 713
+        width: 419
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d781841915fa224096534285739a9c4
+      internalID: -82872147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_11
       rect:
         serializedVersion: 2
         x: 3815
         y: 711
-        width: 408
+        width: 419
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -235,19 +349,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a7d473d7d07c5444b412656e8c9c873
-      internalID: 1991381004
+      spriteID: 88c332544562116428f9967105529ff7
+      internalID: -1297101594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_6
+      name: manFly_12
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 160
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e294ec984f4bf4d8dd488f040dec5e
+      internalID: 2141009307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: manFly_13
       rect:
         serializedVersion: 2
         x: 291
         y: 72
-        width: 409
+        width: 418
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -256,19 +391,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f67b811928718346a31d5f1752626a2
-      internalID: 993287333
+      spriteID: 22564855a6bbae54f8ddcd3b7a6550b2
+      internalID: -1454266444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_7
+      name: manFly_14
       rect:
         serializedVersion: 2
-        x: 1171
+        x: 1172
         y: 72
-        width: 409
+        width: 416
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -277,19 +412,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bbc427b319bd3b4d9a2d4e01f136b7d
-      internalID: -274706864
+      spriteID: 891b3994b7690d44f9d07f7a804ea84c
+      internalID: -1912561264
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_8
+      name: manFly_15
       rect:
         serializedVersion: 2
         x: 2053
         y: 72
-        width: 409
+        width: 413
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -298,19 +433,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21fea01d099546c45a004da11b624a9e
-      internalID: 1843373210
+      spriteID: ec5a25251b3eb7a4499efc7fcc7a6e7b
+      internalID: 554059407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_9
+      name: manFly_16
       rect:
         serializedVersion: 2
         x: 2935
         y: 72
-        width: 408
+        width: 411
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -319,19 +454,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f398603148611f44add1e7580ea04f5
-      internalID: -1656171955
+      spriteID: dc660b4f49d826a42b1b503c34958ba3
+      internalID: -142626132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jetpackIdle_10
+      name: manFly_17
       rect:
         serializedVersion: 2
         x: 3815
         y: 72
-        width: 408
+        width: 410
         height: 548
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,8 +475,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5c1dee82f5aff3489f1cc5bdbb9bee5
-      internalID: 147280817
+      spriteID: 7a0199e1be89bbb4e8a1b8af0fd476c5
+      internalID: 788864054
       vertices: []
       indices: 
       edges: []
@@ -357,17 +492,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jetpackIdle_0: 795230874
-      jetpackIdle_4: 93020332
-      jetpackIdle_6: 993287333
-      jetpackIdle_7: -274706864
-      jetpackIdle_2: 1635014274
-      jetpackIdle_1: 918337480
-      jetpackIdle_9: -1656171955
-      jetpackIdle_3: 2080957577
-      jetpackIdle_10: 147280817
-      jetpackIdle_8: 1843373210
-      jetpackIdle_5: 1991381004
+      manFly_15: 554059407
+      manFly_5: -1262991525
+      manFly_1: 241383061
+      manFly_9: 368227254
+      manFly_4: -1852763217
+      manFly_7: -1399673032
+      manFly_10: -82872147
+      manFly_8: -1174855732
+      manFly_3: 1047379605
+      manFly_6: 1401104588
+      manFly_13: -1454266444
+      manFly_14: -1912561264
+      manFly_16: -142626132
+      manFly_11: -1297101594
+      manFly_2: -1818003421
+      manFly_17: 788864054
+      manFly_0: 1910703928
+      manFly_12: 2141009307
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
