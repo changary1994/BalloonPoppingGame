@@ -24,19 +24,23 @@ public class Balloon : MonoBehaviour
     private Vector2 steeringVelocity;
     Vector2 currentVelocity = new Vector2(.3f, 0);
     Vector2 direction = new Vector2(1, 0);
-
+    [SerializeField] Animator animator;
+    const int POP = 1;
     // Start is called before the first frame update
     void Start()
     {
         level = SceneManager.GetActiveScene().buildIndex + 1;
         if (audio == null)
             audio = gameObject.AddComponent<AudioSource>();
+        if (animator == null)
+            animator = gameObject.AddComponent<Animator>();
         //if (rigid == null)
         //    rigid = GetComponent<Rigidbody2D>();
         //speed = 7;
         speed = speed * level;
         controller = GameObject.Find("GameController");
         player = GameObject.Find("Player");
+       
         InvokeRepeating("SizeGrow", 3.0f, 0.05f);
         shrinkDifficulty = (PlayerPrefs.GetInt("ShrinkToggle") == 1 ? true : false);
         if (shrinkDifficulty != true)
@@ -125,10 +129,13 @@ public class Balloon : MonoBehaviour
     {
         if (other.gameObject.tag == "Pin")
         {
+            animator.SetInteger("pop", POP);
             AudioSource.PlayClipAtPoint(audio.clip, transform.position);
+            speed = 0;
             controller.GetComponent<ScoreKeeper>().AddPoints();
             Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 1);
+            
      
 
 

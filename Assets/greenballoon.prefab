@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6169003334748643173
+--- !u!1 &3048577733287210184
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6169003334748643174}
-  - component: {fileID: 6169003334748643175}
-  - component: {fileID: 6169003334748643172}
-  - component: {fileID: 6169003334748643177}
-  - component: {fileID: 6169003334748643176}
-  - component: {fileID: 6169003334748643179}
+  - component: {fileID: 3048577733287210187}
+  - component: {fileID: 3048577733287210186}
+  - component: {fileID: 3048577733287210185}
+  - component: {fileID: 3048577733287210180}
+  - component: {fileID: 3048577733287210181}
+  - component: {fileID: 3048577733287210182}
+  - component: {fileID: 4611651786015567503}
   m_Layer: 0
   m_Name: greenballoon
   m_TagString: Untagged
@@ -21,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6169003334748643174
+--- !u!4 &3048577733287210187
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.2, y: 19.955252, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +37,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6169003334748643175
+--- !u!212 &3048577733287210186
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,14 +89,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6169003334748643172
+--- !u!50 &3048577733287210185
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -109,30 +110,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6169003334748643177
+--- !u!114 &3048577733287210180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c37107ac85fdeb145b077c8291e5768f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloon: {fileID: 6169003334748643173}
   speed: 0.2
   isFacingRight: 1
-  audio: {fileID: 6169003334748643179}
+  audio: {fileID: 3048577733287210182}
   controller: {fileID: 0}
---- !u!61 &6169003334748643176
+  player: {fileID: 0}
+  maxSize: 3
+  growRate: 0.01
+  level: 0
+  animator: {fileID: 4611651786015567503}
+--- !u!61 &3048577733287210181
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -152,13 +157,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6021996, y: 3.8292084}
   m_EdgeRadius: 0
---- !u!82 &6169003334748643179
+--- !u!82 &3048577733287210182
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6169003334748643173}
+  m_GameObject: {fileID: 3048577733287210184}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -248,3 +253,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &4611651786015567503
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3048577733287210184}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3631440d87b076346b2331b58ad4549e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
