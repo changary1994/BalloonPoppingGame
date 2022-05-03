@@ -26,6 +26,7 @@ public class Balloon : MonoBehaviour
     Vector2 direction = new Vector2(1, 0);
     [SerializeField] Animator animator;
     const int POP = 1;
+    private float currentScore = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class Balloon : MonoBehaviour
         //if (rigid == null)
         //    rigid = GetComponent<Rigidbody2D>();
         //speed = 7;
+        currentScore = PersistentData.Instance.GetScore();
         speed = speed * level;
         controller = GameObject.Find("GameController");
         player = GameObject.Find("Player");
@@ -59,6 +61,7 @@ public class Balloon : MonoBehaviour
     {
         if (this.transform.localScale.x > maxSize || this.transform.localScale.x < minSize)
         {
+            PersistentData.Instance.SetScore(currentScore);
             AudioSource.PlayClipAtPoint(audio.clip, transform.position);
             Destroy(this.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -66,6 +69,7 @@ public class Balloon : MonoBehaviour
         }
         if (Time.timeSinceLevelLoad > 10)
         {
+            PersistentData.Instance.SetScore(currentScore);
             AudioSource.PlayClipAtPoint(audio.clip, transform.position);
             Destroy(this.gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

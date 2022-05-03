@@ -59,6 +59,8 @@ public class ButtonFunctions : MonoBehaviour
 
     public void Ending()
     {
+        PersistentData.Instance.SetName("s");
+        PersistentData.Instance.SetScore(0);
         SceneManager.LoadScene("ending");
     }
 }
