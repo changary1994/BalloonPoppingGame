@@ -133,8 +133,9 @@ public class Balloon : MonoBehaviour
             AudioSource.PlayClipAtPoint(audio.clip, transform.position);
             speed = 0;
             controller.GetComponent<ScoreKeeper>().AddPoints();
+            GetComponent<Collider2D>().enabled = false;
             Destroy(other.gameObject);
-            Destroy(this.gameObject, 1);
+            Destroy(this.gameObject, 1f);
             
      
 

@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] int playerSpeed;
     [SerializeField] bool isFacingRight = true;
     [SerializeField]
-    private float fireRate = 4f;
+    public float fireRate = .3f;
     private float canFire = 0f;
     [SerializeField] private GameObject pin;
     [SerializeField] Animator animator;
