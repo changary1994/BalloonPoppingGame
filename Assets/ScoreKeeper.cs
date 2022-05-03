@@ -15,6 +15,8 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] TMP_Text nameTxt;
     [SerializeField] int level;
     float penalty = 0f;
+    float timeWait = 1f;
+    float timeLoad = 0f;
     const int POP_THRESHOLD_PER_LEVEL = 5;
     //[SerializeField] int scoreThresholdForThisLevel;
 
@@ -35,6 +37,13 @@ public class ScoreKeeper : MonoBehaviour
     void Update()
     {
         DisplayScore();
+        if (pops >= POP_THRESHOLD_PER_LEVEL && Time.time > timeLoad)
+        {
+
+            //move on to next level
+
+            SceneManager.LoadScene(level + 1);
+        }
     }
 
     public void AddPoints(float points)
@@ -47,14 +56,8 @@ public class ScoreKeeper : MonoBehaviour
         Debug.Log("Earned " + points + " points");
         DisplayScore();
         PersistentData.Instance.SetScore(score);
-        
-        if (pops >= POP_THRESHOLD_PER_LEVEL)
-        {
-           
-            //move on to next level
-            SceneManager.LoadScene(level + 1);
-        }
-
+        timeLoad = Time.time + timeWait;
+       
     }
     public void AddPoints()
     {
