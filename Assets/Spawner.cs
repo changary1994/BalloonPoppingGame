@@ -22,8 +22,8 @@ public class Spawner : MonoBehaviour
     void SpawnBalloon()
     {
 
-        int xMin = -13;
-        int xMax = 56;
+        int xMin = -6;
+        int xMax = 50;
         int yMin = 9;
         int yMax = 26;
 

@@ -84,12 +84,12 @@ public class Balloon : MonoBehaviour
         //rigid.velocity = new Vector2(movement * speed, rigid.velocity.y);
         // if (movement2 < 0 && isFacingRight || movement2 > 0 && !isFacingRight)
         //     Flip();
-        if (transform.position.x >= 55.7)
+        if (transform.position.x >= 50)
             Flip();
-        if (transform.position.x <= -13.3)
+        if (transform.position.x <= -6)
             Flip();
         if (transform.position.y >= 27 || transform.position.y <= -7)
-            transform.position = new Vector2(Random.Range(-13, 55), Random.Range(9, 26));
+            transform.position = new Vector2(Random.Range(-6, 50), Random.Range(9, 26));
         if ((SceneManager.GetActiveScene().buildIndex) == 3)
         {
             Flee();

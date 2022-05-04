@@ -8,13 +8,14 @@ public class PauseResume : MonoBehaviour
 {
     GameObject[] pauseMode;
     GameObject[] resumeMode;
+    private float currentScore = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         pauseMode = GameObject.FindGameObjectsWithTag("ShowInPauseMode");
         resumeMode = GameObject.FindGameObjectsWithTag("ShowInResumeMode");
-
+        currentScore = PersistentData.Instance.GetScore();
         //buttons that should only be showed in pause mode should start off as inactive
         foreach (GameObject g in pauseMode)
             g.SetActive(false);
@@ -60,6 +61,7 @@ public class PauseResume : MonoBehaviour
 
     public void Retry()
     {
+        PersistentData.Instance.SetScore(currentScore);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1.0f;
     }
